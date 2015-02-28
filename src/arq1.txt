@@ -1,0 +1,29 @@
+package arquivos;
+
+import java.io.*;
+
+public class LeArqTxt {
+    
+    public static void main(String[] args) {
+        
+        try {
+            
+            FileReader arqTxt = new FileReader("arquivo1.txt");
+            
+            BufferedReader in = new BufferedReader(arqTxt);
+
+            String linha = in.readLine();
+            while (linha != null) {
+                System.out.println(linha);
+                linha = in.readLine();
+            }
+            
+            arqTxt.close();
+            
+        } catch (IOException io1) {
+            System.out.println("Erro em arquivo");
+        }
+        
+    }
+    
+}
